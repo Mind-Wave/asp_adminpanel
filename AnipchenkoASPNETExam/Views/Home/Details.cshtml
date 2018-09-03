@@ -1,0 +1,60 @@
+﻿@model AnipchenkoASPNETExam.Models.users
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>users</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayText("Image")
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.imageurl)" alt="Image" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imageurl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imageurl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (@ViewBag.IsAdmin)
+    {@Html.ActionLink("Edit", "Edit", new { id = Model.id }) } |
+
+    @Html.ActionLink("Back to List", "Index")
+</p>
